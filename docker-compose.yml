@@ -13,9 +13,9 @@ services:
       - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}
     volumes:
       - ${LOCVOL1}minio-server:/data
-    ports:
-      - 10900:9000
-      - 10901:9001
+    #ports:
+      #- 10900:9000
+      #- 10901:9001
     restart: unless-stopped
     command: "server --console-address \":9001\" /data"
 #
