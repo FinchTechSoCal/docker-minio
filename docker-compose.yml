@@ -3,7 +3,7 @@ version: "2.1"
 services:
 #
   minio-server:
-    image: bitnami/minio:latest
+    image: quay.io/minio/minio
     container_name: minio-server
     environment:
       - PUID=${PUID}
@@ -17,6 +17,7 @@ services:
       - 10900:9000
       - 10901:9001
     restart: unless-stopped
+    command: "server --console-address \":9001\" /data"
 #
 #
 networks:
