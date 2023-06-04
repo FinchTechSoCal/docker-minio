@@ -21,3 +21,7 @@ Use this on the proxy:
 ##proxy_http_version 1.1;
 #proxy_set_header Connection "";
 #chunked_transfer_encoding off;
+
+
+
+Notes: https://wiki.alex.lol/books/justsysadminthings/page/minio-server-docker-compose-nginx-reverse-proxy
