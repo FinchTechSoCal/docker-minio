@@ -1,0 +1,25 @@
+---
+version: "2.1"
+services:
+#
+  minio-server:
+    image: bitnami/minio:latest
+    container_name: minio-server
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - MINIO_ROOT_USER=${MINIO_ROOT_USER}
+      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}
+    volumes:
+      - ${LOCVOL1}minio-server:/data
+    ports:
+      - 9000:9000
+      - 9001:9001
+    restart: unless-stopped
+#
+#
+networks:
+  default:
+    name: ${CONNET}
+    external: true
