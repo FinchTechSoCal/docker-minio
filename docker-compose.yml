@@ -14,8 +14,8 @@ services:
     volumes:
       - ${LOCVOL1}minio-server:/data
     ports:
-      - 9000:9000
-      - 9001:9001
+      - 10900:9000
+      - 10901:9001
     restart: unless-stopped
 #
 #
